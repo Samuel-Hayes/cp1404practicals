@@ -1,14 +1,12 @@
-WORD_COUNT = {}
-word_count = 0
+unique_words = {}
 user_string = str(input("Please enter a string: "))
 words = user_string.split()
 for word in words:
-    frequency = WORD_COUNT.get(word, 0)     #didn't know this
-    WORD_COUNT[word] = frequency + 1
-words = list(WORD_COUNT.keys()) #didn't know this
+    frequency = unique_words.get(word, 0) + 1
+words = list(unique_words.keys())
 words.sort()
 max_length = max((len(word) for word in words))
 for word in words:
-    print("{:{}} : {}".format(word, max_length, WORD_COUNT[word]))
+    print("{:{}} : {}".format(word, max_length, unique_words[word]))
 
-print(WORD_COUNT)
+print(unique_words)

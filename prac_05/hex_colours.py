@@ -3,8 +3,5 @@ COLOURS = {"AliceBlue": "#f0f8ff", "black": "#000000", "blue1": "#0000ff", "red1
 
 colour = input("Enter colour name: ")
 while colour != "":
-    if colour in COLOURS:
-        print(colour, "is", COLOURS[colour])
-    else:
-        print("Invalid colour")
+    print("{} is {}".format(colour,COLOURS.get(colour)))
     colour = input("Enter colour name: ")
