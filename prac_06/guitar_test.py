@@ -6,4 +6,4 @@ print(Gibson.get_age())
 print(Gibson.is_vintage())
 
 print("{} get_age() - Expected {}. Got {}".format(Gibson.name, 96, Gibson.get_age()))
-# up to Playing Guitars (not really)
+print("{} is_vintage() - Expected {}. Got {}".format(Gibson.name, "True", Gibson.is_vintage()))
