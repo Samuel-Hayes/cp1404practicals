@@ -8,21 +8,22 @@ class ConvertMiles(App):
         self.root = Builder.load_file('convert_miles.kv')
         return self.root
 
-    def handle_up(self, value):
-        if value.text == '':
-            value.text = '0'
-        value += 1
+    def handle_increment(self, increment):
+        value = self.check_miles() + increment
         self.root.ids.input_number.text = str(value)
+        self.handle_calculation()
 
-    def handle_down(self, value):
-        if value.text == '':
-            value.text = '0'
-        value -= 1
-        self.root.ids.input_number.text = str(value)
+    def check_miles(self):
+        try:
+            value = int(self.root.ids.input_number.text)
+            return value
+        except ValueError:
+            return 0
 
-    def handle_convert(self, value):
-        if value.text == '':
-            value.text = '0'
+    def handle_calculation(self):
+        value = self.check_miles()
         result = value * 1.60934
         self.root.ids.output_label.text = str(result)
+
+
 ConvertMiles().run()
