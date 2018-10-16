@@ -24,5 +24,6 @@ while choice != 'q'.upper():
         print("Bill to date: ${}".format(total_fare))
     else:
         print("Please enter valid input")
+    print("q)uit, c)hoose taxi, d)rive")
     choice = input('>>>')
 print("Your total taxi fare is: ${}".format(total_fare))
